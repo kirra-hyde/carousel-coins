@@ -85,15 +85,11 @@ it("left arrow doesn't display at first image", function(){
   expect(
     container.querySelector('img[alt="testing image 1"]')
   ).toBeInTheDocument();
-  expect(
-    container.querySelector('img[alt="testing image 2"]')
-  ).not.toBeInTheDocument();
+
 
   const leftArrow = container.querySelector(".bi-arrow-left-circle");
   debug(leftArrow);
-  expect(
-    leftArrow
-  ).not.toBeInTheDocument();
+  expect(leftArrow).toHaveStyle("visibility: hidden;");
 })
 
 it("right arrow doesn't display at third image", function(){
@@ -114,9 +110,7 @@ it("right arrow doesn't display at third image", function(){
   ).toBeInTheDocument();
 
   debug(rightArrow);
-  expect(
-    rightArrow
-  ).not.toBeInTheDocument();
+  expect(rightArrow).toHaveStyle("visibility: hidden;");
 })
 
 

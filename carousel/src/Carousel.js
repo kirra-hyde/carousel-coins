@@ -20,6 +20,10 @@ import Card from "./Card";
   const currCard = photos[currCardIdx];
   const total = photos.length;
 
+  const isRightHidden = currCardIdx < total - 1 ? "visible" : "hidden";
+  const isLeftHidden = currCardIdx > 0 ? "visible" : "hidden";
+
+
   //Increments currCardIdx state by 1
   function goForward() {
     setCurrCardIdx(currCardIdx + 1);
@@ -36,6 +40,7 @@ import Card from "./Card";
       <div className="Carousel-main">
         <i
           className="bi bi-arrow-left-circle"
+          style={{visibility: isLeftHidden}}
           onClick={goBackward}
         />
         <Card
@@ -46,6 +51,7 @@ import Card from "./Card";
         />
         <i
           className="bi bi-arrow-right-circle"
+          style={{visibility: isRightHidden}}
           onClick={goForward}
         />
       </div>
